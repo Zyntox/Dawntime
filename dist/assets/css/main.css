@@ -1,0 +1,237 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,100,300,700|Share+Tech+Mono);
+p {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: none;
+}
+
+input {
+  margin: 0;
+  padding: 0;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #1f3f84;
+}
+
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #1f3f84;
+  opacity: 1;
+}
+
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #1f3f84;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #1f3f84;
+}
+
+/**************************************************************************************************
+    Animation *START*
+***************************************************************************************************/
+@keyframes cloudAnimation {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+/**************************************************************************************************
+    Animation *END*
+***************************************************************************************************/
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+.wrapper--large {
+  width: 95%;
+}
+
+.wrapper--medium {
+  width: 75%;
+}
+
+.wrapper--small {
+  width: 60%;
+}
+
+body {
+  margin: 0 0 100px;
+  /* bottom = footer height */
+  background-color: #30c5f7;
+}
+
+header {
+  padding: 10px 0 15px 0;
+  color: #ffffff;
+}
+
+.header__logotype {
+  font-family: "Raleway", sans-serif;
+  color: #ffffff;
+  margin: 10px 0 0 0;
+}
+
+.header__subline {
+  padding: 0;
+  margin: 5px 0 20px 0;
+  font-weight: 100;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Raleway", sans-serif;
+}
+
+.finder {
+  text-align: center;
+}
+
+.finder__searchbar {
+  position: relative;
+  bottom: 7px;
+  left: 4px;
+  width: 20%;
+  min-width: 300px;
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  color: #ffffff;
+  border: none;
+  display: inline-block;
+  text-align: center;
+  padding: 10px 0 10px 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  -webkit-border-top-left-radius: 20px;
+  -webkit-border-bottom-left-radius: 20px;
+  -moz-border-radius-topleft: 20px;
+  -moz-border-radius-bottomleft: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.finder__btn {
+  display: inline-block;
+  padding: 8px 10px 8px 6px;
+  font-size: 12px;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.4);
+  -webkit-border-top-right-radius: 20px;
+  -webkit-border-bottom-right-radius: 20px;
+  -moz-border-radius-topright: 20px;
+  -moz-border-radius-bottomright: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.finder__btn:hover {
+  background-color: #1f3f84;
+}
+
+.scenery__layer1 {
+  height: 500px;
+  background-image: url("../img/cloudlayer1.svg");
+  animation: cloudAnimation 40s linear infinite;
+}
+
+.scenery__layer2 {
+  height: 500px;
+  background-image: url("../img/cloudlayer2.svg");
+  animation: cloudAnimation 30s linear infinite;
+}
+
+.scenery__layer3 {
+  height: 500px;
+  background-image: url("../img/cloudlayer3.svg");
+  animation: cloudAnimation 20s linear infinite;
+}
+
+.scenery__layer4 {
+  height: 500px;
+  background-image: url("../img/cloudlayer4.svg");
+  animation: cloudAnimation 15s linear infinite;
+}
+
+.factbox {
+  color: #ffffff;
+  margin: 0 0 15px 0;
+  width: 40%;
+  line-height: 1.5;
+  padding: 10px 20px 10px 20px;
+  font-size: 12px;
+  font-family: "Raleway", sans-serif;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+
+footer {
+  background-color: #2e2e31;
+  padding: 10px 0 10px 0;
+  color: #ffffff;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+}
+
+.byline {
+  width: 100%;
+  padding: 5px 0 5px 0;
+  background-color: #3a3a3a;
+}
+
+.byline__text {
+  font-size: 12px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  color: #ffffff;
+}
+
+/********************************************************************************************
+    General classes  *START* 
+*********************************************************************************************/
+.text--code {
+  color: #d594f4;
+  font-family: "Share Tech Mono";
+}
+
+.text--left {
+  text-align: left;
+}
+
+.text--center {
+  text-align: center;
+}
+
+.text--right {
+  text-align: right;
+}
+
+/********************************************************************************************
+    General classes  *END* 
+*********************************************************************************************/
