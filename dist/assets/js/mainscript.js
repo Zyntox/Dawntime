@@ -22,6 +22,7 @@
                 img.setAttribute('onclick', 'remove(' +id +')'); //Need to be fixed in *see remove()*
         
     }
+
     // Need to be updated!! 
     function remove(id){
         console.log(id);
@@ -115,8 +116,10 @@
     }
     
     function searchWeather(){
-        var location = document.getElementById('search').value; 
-        fetchWeatherInfo(location);
+        var location = document.getElementById('search');
+        fetchWeatherInfo(location.value);
+        location.value = "";
+        
     }
 
     function getLocalTime(){

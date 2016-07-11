@@ -38,8 +38,18 @@ body{
 }
 
 header{
+    position: relative;
     padding: 75px 0 15px 0;
     color: #c69fca;
+}
+
+.header__img{
+    
+    position: absolute;
+    left: 695px;
+    top: 35px;
+    width: 120px;
+    height: 120px;
 }
 
 .header__logotype{
@@ -87,7 +97,7 @@ h5{
 
 .finder__btn{
     display: inline-block;
-    padding: 8px 10px 8px 6px;
+    padding: 8px 10px 8px 8px;
     font-size: 12px;
     //background: #1090bb;
     color: #ffffff;
@@ -99,7 +109,10 @@ h5{
     background-color: $third-color;
 }
 
-
+.finder__btn__icon{
+    width: 25px;
+    height: 25px;
+}
 .mainboard{
     text-align: center;
 }
