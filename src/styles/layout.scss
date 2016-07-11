@@ -2,16 +2,12 @@
     Animation *START*
 ***************************************************************************************************/
 
-@keyframes cloudAnimation {
-	from { background-position: 0 0; }
-	to { background-position: 100% 0; }
-    
-}
 /**************************************************************************************************
     Animation *END*
 ***************************************************************************************************/
 
-html{
+html{;
+    margin: 0 auto;
     position: relative;
     min-height: 100%;
 }
@@ -34,20 +30,22 @@ html{
 }
 
 body{
+    background-image: url('../img/28070423031_83fcab325d_o.jpg');
+    min-height: 100%;
     // Essential for "clean sticky footer"!
     margin: 0 0 100px; /* bottom = footer height */
-    background-color: #30c5f7;
+    background-color: #ffffff;
 }
 
 header{
     padding: 10px 0 15px 0;
-    //background-image: url("../img/denim.png");
-    color: #ffffff;
+    color: #c69fca;
 }
 
 .header__logotype{
     font-family: $first-font;
-    color: #ffffff;
+    color:    #dec3de;
+    // color:    #dec3de;
     margin: 10px 0 0 0 ;
 }
 
@@ -72,25 +70,19 @@ h5{
 
 .finder__searchbar{
     position: relative;
-    bottom:7px;
+    bottom:6px;
     left: 4px;
     width: 20%;
     min-width: 300px;
     font-size: 16px;
     font-family: $first-font;
-    color: #ffffff;
+    color:    #d8d8d8;
     border: none;
     display: inline-block;
     text-align: center;
-    padding: 10px 0 10px 0;
-    background-color: rgba(255, 255, 255, 0.2);
+    padding: 11px 0 10px 0;
+    background-color: rgba(0, 0, 0, 0.1);
     
-    -webkit-border-top-left-radius: 20px;
-    -webkit-border-bottom-left-radius: 20px;
-    -moz-border-radius-topleft: 20px;
-    -moz-border-radius-bottomleft: 20px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
 }
 
 .finder__btn{
@@ -99,14 +91,7 @@ h5{
     font-size: 12px;
     //background: #1090bb;
     color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.4);
-
-    -webkit-border-top-right-radius: 20px;
-    -webkit-border-bottom-right-radius: 20px;
-    -moz-border-radius-topright: 20px;
-    -moz-border-radius-bottomright: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
     
 }
 
@@ -115,37 +100,34 @@ h5{
 }
 
 
-.scenery{
+.mainboard{
+    text-align: center;
 }
 
-.scenery__layer1{
-    height: 500px;
-    background-image: url('../img/cloudlayer1.svg');
-    
-    animation: cloudAnimation 40s linear infinite;
+.errorcontainer{
+    padding: 0 10px 0 0; 
+    color: #e69898;
+    font-family: $first-font;
 }
 
-.scenery__layer2{
-    height: 500px;
-    background-image: url('../img/cloudlayer2.svg');
-    animation: cloudAnimation 30s linear infinite;
-    
+.errorcontainer__btn{
+    margin: 0 0 0 10px;
+    padding: 1px 4px 1px 4px;
 }
 
-.scenery__layer3{
-    height: 500px;
-    background-image: url('../img/cloudlayer3.svg');
-    animation: cloudAnimation 20s linear infinite;
-    
+.infocontainer{
+    font-family: $first-font;
+    text-align: left;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 230px;
+    display: inline-block;
+    color: #fff;
 }
 
-.scenery__layer4{
-    height: 500px;
-    background-image: url('../img/cloudlayer4.svg');
-    animation: cloudAnimation 15s linear infinite;
-    
+.infocontainer__item{
+    padding:  3px 0 3px 0;
 }
-
 
 .factbox{
     color: #ffffff;

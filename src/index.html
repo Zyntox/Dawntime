@@ -13,7 +13,7 @@
             
                 <div class="finder">
                     <input  id="search" class="finder__searchbar" type="text" placeholder="Search for a location here...">
-                    <div class="finder__btn">
+                    <div class="finder__btn" onclick="searchWeather()">
                         <img class="finder__btn__icon" src="/assets/img/icons/magnifier.svg" alt="">
                     </div>
                 </div>
@@ -24,25 +24,37 @@
         
         <!-- Mainboard *START* -->
         <div class="mainboard">
-               <div class="scenery">
-                   <div class="scenery__layer1">
-                        <div class="scenery__layer2">
-                            <div class="scenery__layer3">
-                                <div class="scenery__layer4">
-                                    <div class="wrapper wrapper--large">
 
-                                        <!--<div class="factbox">
-                                                <p>This project was a learning experience in how to make an application with the use of <span class="text--code">"Object-Oriented-Programming"</span>.</p>
+                <ul id="errorcontainer" class="errorcontainer">
+                </ul>
+                
+                <ul class="infocontainer">
+                    <li class="infocontaineer__item" > <b>Date:</b> <span id="date"></span> of <span id="month"></span></li>
+                    <li class="infocontainer__item"> <b>Location: </b> <span id="location"></span></li>
+                    <li class="infocontainer__item"><b>Latitude: </b> <span id="latitude"></span> </li>
+                    <li class="infocontainer__item"><b>Longitude: </b> <span id="longitude"></span> </li>
+                    <li class="infocontainer__item"><b>The Local time: </b> <span id="clock"></span> </li>
+                    <li class="infocontainer__item"><b>current weather: </b> <span id="currentweather"></span> </li>
+                  
+                </ul>
+                <ul class="infocontainer">
+                    <li class="infcontainer__item">Hello!</li>
+                    <li class="infcontainer__item">fnaskbf</li>
+                    <li class="infcontainer__item">safafasadaa</li>
+                    <li class="infcontainer__item">sadadawqe</li>
+                    <li class="infcontainer__item">adasdgedgsgvsd</li>
+                </ul>
+                
+                   <ul class="infocontainer">
+                    <li class="infcontainer__item">Hello!</li>
+                    <li class="infcontainer__item">fnaskbf</li>
+                    <li class="infcontainer__item">safafasadaa</li>
+                    <li class="infcontainer__item">sadadawqe</li>
+                    <li class="infcontainer__item">adasdgedgsgvsd</li>
+                </ul>
+                
+                
 
-                                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel tortor non felis aliquam interdum. Donec aliquam tortor enim. Vestibulum id malesuada sem. <br><br> Vestibulum blandit posuere quam, sit amet consectetur tortor sollicitudin quis. Cras in vehicula sapien. Curabitur eu volutpat libero, sed placerat felis. Praesent ut neque eu elit finibus consectetur. Nulla facilisi.<br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sit amet dapibus felis. Quisque porttitor metus purus, a mollis nisl interdum eget. Nam dignissim urna quis elit blandit, et tincidunt lectus malesuada. Suspendisse mauris ante, iaculis quis sapien eu, placerat posuere dolor. Donec ornare lectus vitae tellus lobortis molestie. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; </p>        
-                                        </div> --> 
-                                    </div>    
-                                    
-                                </div>
-                            </div>
-                        </div>
-                   </div>
-               </div>
         </div>
         <!-- Mainboard *END* -->
         
@@ -54,4 +66,5 @@
         </footer>
         <!-- footer *END* -->
     </body>
+    <script type="text/javascript" src="./assets/js/mainscript.js"></script>
 </html>
