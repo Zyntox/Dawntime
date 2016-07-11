@@ -2,22 +2,43 @@
     function outputToDomById(id, value){
         document.getElementById(id).innerHTML = value;
     }
-    // Helper function  : Creates new DOM elements and appends them to an existing element. <--- not true anymore, change!
-    function addErrorMessageToList(message){
-                  
+    // Creates a new eroor message and appends it to the error container list. 
+    function addErrorMessageToList(message, callback){
+        
+                var id = callback();
+        
+                var container = document.getElementById('errorcontainer__list');
                 var element = document.createElement("li");
+                element.setAttribute('id', id);
+                element.setAttribute('class', 'errorcontainer__item animated FadeIn');
                 message = document.createTextNode(message);
-                var btn = document.createElement('button');
-                btn.setAttribute('class', 'errorcontainer__btn');
-                btn.setAttribute('onclick', 'removeErrorMessage()');
                 element.appendChild(message);
-                var message = document.createTextNode('X');
-                btn.appendChild(message);
-                element.appendChild(btn);
-                var container = document.getElementById('errorcontainer');
+                var img = document.createElement('img');
+                element.appendChild(img);
+               
                 container.appendChild(element); 
+                img.setAttribute('src', '/assets/img/icons/error_w.svg');
+                img.setAttribute('class', 'errorcontainer__btn');
+                img.setAttribute('onclick', 'remove(' +id +')'); //Need to be fixed in *see remove()*
         
     }
+    // Need to be updated!! 
+    function remove(id){
+        console.log(id);
+        id = document.getElementById(id);
+        id.parentNode.removeChild(id);
+    }
+
+    function fetchIndex(){
+        var elements = document.getElementById('errorcontainer__list'),
+            num = elements.childElementCount;
+            
+        if (num == 0)
+            return 0;
+        else
+            return Number(elements.childNodes[num].id) + 1;
+    }
+
 
     function getConditionsAtUserPosition(){
     
@@ -26,7 +47,10 @@
                     
                     //This section should be moved to the other side of the if statement.
                     var text = "Your browser does not have support for HTML5 geolocation!";
-                    addErrorMessageToList(text);
+                    addErrorMessageToList(text, fetchIndex);
+                    addErrorMessageToList('Bleigh!', fetchIndex);
+                    addErrorMessageToList('James Bond!', fetchIndex);
+
                     
                     
                     console.log("Your brower has support for HTML5 geolocation.")
@@ -120,7 +144,6 @@
         
             // By calling this function the localClock function will autoupdate every 1000ms
             function updateClock(time){
-                console.log("sada");
                 setTimeout(function(){ localClock(); }, 1000);
             }
             

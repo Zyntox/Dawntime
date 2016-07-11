@@ -2,14 +2,15 @@
     <head>
         <meta charset="UTF-8">   
         <link rel="stylesheet" href="./assets/css/main.css">
+        <link rel="stylesheet" href="./assets/css/animate.css">
     </head>
     <body>
        
         <!--header *START* -->
         <header>
             <div class="wrapper wrapper--large">
-                <h1 class="header__logotype text--center"> - DAWNTIME -</h1>
-                <h2 class="header__subline text--center">" From dawn till dusk scince <b>2016</b> "</h2>
+                <h1 class="header__logotype text--center animated BounceInDown"> - DAWNTIME -</h1>
+                <h2 class="header__subline text--center animated FadeInUp">" From dawn till dusk scince <b>2016</b> "</h2>
             
                 <div class="finder">
                     <input  id="search" class="finder__searchbar" type="text" placeholder="Search for a location here...">
@@ -17,17 +18,18 @@
                         <img class="finder__btn__icon" src="/assets/img/icons/magnifier.svg" alt="">
                     </div>
                 </div>
-            
+                
+                <div class="errorcontainer">
+                    <ul id="errorcontainer__list" class="errorcontainer__list">
+                    </ul>
+                </div>
+                
             </div>
         </header>
         <!-- header *END* -->
         
         <!-- Mainboard *START* -->
         <div class="mainboard">
-
-                <ul id="errorcontainer" class="errorcontainer">
-                </ul>
-                
                 <ul class="infocontainer">
                     <li class="infocontaineer__item" > <b>Date:</b> <span id="date"></span> of <span id="month"></span></li>
                     <li class="infocontainer__item"> <b>Location: </b> <span id="location"></span></li>

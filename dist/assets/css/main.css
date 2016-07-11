@@ -88,7 +88,7 @@ body {
 }
 
 header {
-  padding: 10px 0 15px 0;
+  padding: 75px 0 15px 0;
   color: #c69fca;
 }
 
@@ -149,14 +149,32 @@ h5 {
 }
 
 .errorcontainer {
-  padding: 0 10px 0 0;
+  text-align: center;
+}
+
+.errorcontainer__list {
+  padding: 0;
+  display: inline-block;
   color: #e69898;
   font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.errorcontainer__item {
+  text-align: right;
+  padding: 3px 7px 10px 7px;
+  margin: 2px 0 0 0;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .errorcontainer__btn {
-  margin: 0 0 0 10px;
-  padding: 1px 4px 1px 4px;
+  position: relative;
+  top: 5px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 0 0 5px;
 }
 
 .infocontainer {
