@@ -18,7 +18,7 @@ function removeError(id){
 function addErrorMessageToList(message){
      
     /*  Function for keeping track of how many error messages there are in "errorcontainer__list". 
-        If zera, return that. If there are more than one item, return the id of the last item and 
+        If zero, return that. If there are more than one item, return the id of the last item and 
         plus one to the returned number.The number will be used to set an ID to a newly created error message.
     */
 
