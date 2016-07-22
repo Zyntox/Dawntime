@@ -3,29 +3,38 @@ function outputToDomById(id, value){
     document.getElementById(id).innerHTML = value;
 }
 
+// *NOT FUNCTIONAL* Needs to be updated!! 
+function removeError(id){
+    console.log(id);
+    var element = document.getElementById(id),
+        parent = element.parentNode;
 
-
-/*  Function for keeping track of how many error messages there are in "errorcontainer__list". 
-        If zera, return that. If there are more than one item, return the id of the last item and 
-        plus one to the returned number.The number will be used to set an ID to a newly created error message.*/
-
-//  ( There must be a simpler way to do this? ...maybe integrate into addErrorMessageToList? )
-function fetchIndex(){
-    var elements = document.getElementById('errorcontainer__list'),
-        num = elements.childElementCount;
-
-    if (num == 0)
-        return 0;
-    else
-        return Number(elements.childNodes[num].id) + 1;
+    console.log(element);
+    
+    parent.removeChild(element);
 }
 
-
-
 // Creates a new errormessage and appends it to the error container list. 
-function addErrorMessageToList(message, callback){
+function addErrorMessageToList(message){
+     
+    /*  Function for keeping track of how many error messages there are in "errorcontainer__list". 
+        If zera, return that. If there are more than one item, return the id of the last item and 
+        plus one to the returned number.The number will be used to set an ID to a newly created error message.
+    */
 
-    var id = callback;
+    function fetchIndex(){
+        var elements = document.getElementById('errorcontainer__list'),
+            num = elements.childElementCount;
+
+        if (num == 0)
+            return 0;
+        else
+            return Number(elements.childNodes[num].id) + 1;
+    }
+
+    
+    
+    var id = fetchIndex();
 
     var container = document.getElementById('errorcontainer__list');
     var element = document.createElement("li");
@@ -39,17 +48,8 @@ function addErrorMessageToList(message, callback){
     container.appendChild(element); 
     img.setAttribute('src', '/assets/img/icons/error_w.svg');
     img.setAttribute('class', 'errorcontainer__btn');
-    img.setAttribute('onclick', 'remove(' +id +')'); //Need to be fixed in *see remove()*
+    img.setAttribute('onclick', 'removeError(' +id +')'); //Need to be fixed in *see remove()*
 
-}
-
-
-
-// *NOT FUNCTIONAL* Needs to be updated!! 
-function remove(id){
-    console.log(id);
-    id = document.getElementById(id);
-    id.parentNode.removeChild(id);
 }
 
 
@@ -76,7 +76,7 @@ function getConditionsAtUserPosition(){
     
         // This function is used as a callback parameter in the navigator function.
         function error(error){
-            addErrorMessageToList("Was not able to fetch the user position. (connection problem?)", fetchIndex());
+            addErrorMessageToList("Was not able to fetch the user position. (connection problem?)");
             console.log("Was not able to fetch the user position.");
             console.log("you should still be able to search for the weather manually");
         }
@@ -91,7 +91,7 @@ function getConditionsAtUserPosition(){
             else{
                 var text = "Your browser does not have support for HTML5 geolocation!";
                 console.log(text);
-                addErrorMessageToList(text, fetchIndex());         
+                addErrorMessageToList(text);         
                 return false;    
             }
         }
@@ -117,7 +117,7 @@ function fetchDataFromApi(url, query, callback){
 
         } else {
             // Failure
-            addErrorMessageToList('Was unable to fetch API data from server.', fetchIndex() );
+            addErrorMessageToList('Was unable to fetch API data from server.');
             console.log("Reached the server, but it responded with: " + request.status);    
         }  
     };   
@@ -163,7 +163,7 @@ function fetchWeatherInfo(location, lat, lon){
 
         } else {
             // Failure
-            addErrorMessageToList("Failed to fetch the weather! :(",fetchIndex());
+            addErrorMessageToList("Failed to fetch the weather! :(");
             console.log("Failed to fetch the Weather. :(");
         }   
 
