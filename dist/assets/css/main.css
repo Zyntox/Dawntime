@@ -150,7 +150,7 @@ h5 {
 }
 
 .finder__btn:hover {
-  background-color: #c69fca;
+  background-color: #78287f;
 }
 
 .finder__btn__icon {
@@ -177,7 +177,7 @@ h5 {
 
 .errorcontainer__item {
   text-align: right;
-  padding: 3px 7px 10px 7px;
+  padding: 3px 7px 7px 7px;
   margin: 2px 0 0 0;
   background-color: rgba(0, 0, 0, 0.5);
 }
@@ -218,12 +218,10 @@ h5 {
 }
 
 footer {
-  background-color: #2e2e31;
+  border-top: 1px solid #ecb6ec;
+  border-bottom: 1px solid #ecb6ec;
   padding: 10px 0 10px 0;
   color: #ffffff;
-  position: absolute;
-  left: 0;
-  bottom: 0;
   height: 100px;
   width: 100%;
 }
@@ -231,7 +229,6 @@ footer {
 .byline {
   width: 100%;
   padding: 5px 0 5px 0;
-  background-color: #3a3a3a;
 }
 
 .byline__text {

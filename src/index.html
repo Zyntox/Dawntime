@@ -11,8 +11,8 @@
             <div class="wrapper wrapper--large">
                 <img class="header__img" src="/assets/img/icons/solar.svg" alt="">
                 <h1 class="header__logotype text--center animated BounceInDown"> - DAWNTIME -</h1>
-                <h2 class="header__subline text--center animated FadeInUp">" From dawn till dusk scince <b>2016</b> '</h2>
-                <div class="finder">
+                <h2 class="header__subline text--center animated FadeInUp">" From dawn till dusk scince <b>2016</b> "</h2>
+                <div class="finder animated FadeIn">
                     <input  id="search" class="finder__searchbar" type="text" placeholder="Search for a location here...">
                     <div class="finder__btn" onclick="searchWeather()">
                         <img class="finder__btn__icon" src="/assets/img/icons/search.svg" alt="">
@@ -33,6 +33,7 @@
                 <ul class="infocontainer animated FadeInLeftBig">
                     <li class="infocontaineer__item" > <b>Date:</b> <span id="date"></span> of <span id="month"></span></li>
                     <li class="infocontainer__item"> <b>Location: </b> <span id="location"></span></li>
+                    <li class="infocontainer__item"> <b>Country: </b> <span id="country"></span></li>
                     <li class="infocontainer__item"><b>Latitude: </b> <span id="latitude"></span> </li>
                     <li class="infocontainer__item"><b>Longitude: </b> <span id="longitude"></span> </li>
                     <li class="infocontainer__item"><b>The Local time: </b> <span id="clock"></span> </li>
@@ -40,33 +41,31 @@
                   
                 </ul>
                 <ul class="infocontainer animated FadeInUpBig">
-                    <li class="infcontainer__item">Hello!</li>
-                    <li class="infcontainer__item">fnaskbf</li>
-                    <li class="infcontainer__item">safafasadaa</li>
-                    <li class="infcontainer__item">sadadawqe</li>
-                    <li class="infcontainer__item">adasdgedgsgvsd</li>
+                    <li class="infcontainer__item"><b>Info from Sunrise - Sunset API </b></li>
+                    <li class="infcontainer__item"><b>sunrise: </b> <span id="sunrise"></span> </li>
+                    <li class="infcontainer__item"><b>sunset: </b> <span id="sunset"></span> </li>
                 </ul>
                 
-                   <ul class="infocontainer animated FadeInRightBig">
-                    <li class="infcontainer__item">Hello!</li>
-                    <li class="infcontainer__item">fnaskbf</li>
-                    <li class="infcontainer__item">safafasadaa</li>
-                    <li class="infcontainer__item">sadadawqe</li>
-                    <li class="infcontainer__item">adasdgedgsgvsd</li>
-                </ul>
-                
-                
-
         </div>
         <!-- Mainboard *END* -->
         
-        <!-- footer *START* -->
-        <footer> 
-            <div class="byline">
-                <p class="byline__text text--center">Created and maintained by Marcus " Zyntox " Nilsson. </p>
-            </div>
-        </footer>
+       <!--
+        <div class="wrapper wrapper--large"> -->
+            <!-- footer *START* -->
+            <!--<footer>--> 
+                <!--
+                <h2>Attribution:</h2>
+                <ul class="attribution">
+                   <li><a href="">http://sunrise-sunset.org/api</a></li>
+                </ul>
+                
+
+                <div class="byline">
+                    <p class="byline__text text--center">Created and maintained by Marcus " Zyntox " Nilsson. </p>
+                </div>
+            </footer> 
         <!-- footer *END* -->
+        <!--</div>-->    
     </body>
     <script type="text/javascript" src="./assets/js/mainscript.js"></script>
 </html>
