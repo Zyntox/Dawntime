@@ -182,10 +182,9 @@ function searchWeather(){
 
 //Checks so that if a timepoint is a single digit, it will add a zero ifront of it.     
 function fixSingleDigit(i){
-    if (i < 10){
+    if (i < 10)
         i = "0" + i;
-        return i;
-    }
+    return i; 
 }     
 
 
