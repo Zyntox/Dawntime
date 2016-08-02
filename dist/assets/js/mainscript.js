@@ -19,7 +19,7 @@ function addErrorMessageToList(message){
      
     /*  Function for keeping track of how many error messages there are in "errorcontainer__list". 
         If zero, return that. If there are more than one item, return the id of the last item and 
-        plus one to the returned number.The number will be used to set an ID to a newly created error message.
+        plus one to the returned number. The number will be used to set an ID to a newly created error message.
     */
 
     function fetchIndex(){
@@ -124,7 +124,8 @@ function fetchDataFromApi(url, query, callback){
     request.send();
 }
 
-    
+
+
 function fetchWeatherInfo(location, lat, lon){
     //Checks what parameters was put in. If a location was put in that case will be handled before coords. 
     var query;
@@ -149,9 +150,9 @@ function fetchWeatherInfo(location, lat, lon){
     console.log(data);
     if (data){        
         // Sucess!
-            console.log(data.sys.sunrise);
-            var rise = stampConverter(data.sys.sunrise),
-                set = stampConverter(data.sys.sunset);
+            //timeToSunEvent(data.sys.sunset);
+            var rise = stampToTime(data.sys.sunrise),
+                set = stampToTime(data.sys.sunset);
 
             outputToDomById('country', data.sys.country);
             outputToDomById('location', data.name);
@@ -190,7 +191,7 @@ function fixSingleDigit(i){
 
 
 // Converts a timestamp to a clock value.  
-function stampConverter(timestamp){
+function stampToTime(timestamp){
     var myDate = new Date(timestamp * 1000),
         hours = fixSingleDigit( myDate.getHours() ),
         minutes = fixSingleDigit( myDate.getMinutes() ),
@@ -203,33 +204,34 @@ function stampConverter(timestamp){
 
 
 function getLocalTime(){
-
+    
      var today = new Date(),
          date = today.getDate(),
          weekday = today.getDay(),
          month = today.getMonth(),
-         suffix;
+         currentTime,
+         suffix; 
 
 
     //Set up a clock from the new Date.
     function localClock(){
-    var time = new Date(),    
-        hours = time.getHours(),
-        minutes = time.getMinutes(),
-        seconds = time.getSeconds();
-
+        var time = new Date(),    
+            hours = time.getHours(),
+            minutes = time.getMinutes(),
+            seconds = time.getSeconds();
 
         // By calling this function the localClock function will autoupdate every 1000ms
-        function updateClock(time){
+        function updateClock(){
             setTimeout(function(){ localClock(); }, 1000);
         }
 
-    hours = fixSingleDigit(hours);
-    minutes = fixSingleDigit(minutes);
-    seconds = fixSingleDigit(seconds);
+           
+        hours = fixSingleDigit(hours);
+        minutes = fixSingleDigit(minutes);
+        seconds = fixSingleDigit(seconds);
 
-    outputToDomById('clock', hours + ":" + minutes + ":" + seconds );
-    updateClock();    
+        outputToDomById('clock', hours + ":" + minutes + ":" + seconds );
+        updateClock();    
     }
 
 
@@ -303,12 +305,35 @@ function getLocalTime(){
 
     outputToDomById('date', weekday + " - " + date + suffix);
     outputToDomById('month', month);
-    localClock(today);
+    localClock();
 }
 
 
 
+//// This function need more work to be finished! *WIP*
+//function timeToSunEvent(eventTime){
+//    var today = new Date(),
+//        currentTime = today.getTime() / 1000,
+//        timeLeft;
+//        
+//        function updateCountDown(time){
+//            setTimeout(function(){ timeToSunEvent(time); }, 1000);
+//        }
+//        
+//    
+//        // ...on sunset. 
+//        if (eventTime > currentTime){
+//            timeLeft = eventTime - currentTime;
+//            var element = document.getElementById('toSunset');
+//            
+//            // Convert timestamp to a clock time.
+//            element.innerHTML = stampToTime(timeLeft);
+//            updateCountDown(eventTime);
+//        }
+//
+//}
+
 window.onload = function(){   
     getLocalTime();
-    getConditionsAtUserPosition();    
+    getConditionsAtUserPosition();  
 }
