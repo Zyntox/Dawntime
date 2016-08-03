@@ -191,6 +191,17 @@ function fetchWeatherInfo(location, lat, lon){
 }
 
 
+// Function for executing a search when the user presses the enter key. 
+function searchOnKey(){
+    document.getElementById('search')
+        .addEventListener("keyup", function(event){
+        event.preventDefault();
+            if (event.keyCode == 13) {
+                document.getElementById("search__btn").click();
+            }
+        });   
+}
+
 
 function searchWeather(){
     var location = document.getElementById('search');
@@ -365,5 +376,6 @@ function timeToSunEvent(event, eventTime){
 
 window.onload = function(){   
     getLocalTime();
+    searchOnKey();
     getConditionsAtUserPosition();  
 }
