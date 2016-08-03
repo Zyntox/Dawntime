@@ -1,9 +1,17 @@
+
+/*  Global variables ** These are only here temporary as global variables are known to be bad practice. Perhaps closures
+    couldbe used instead? ** */ 
+var sunsetTimer, 
+    sunriseTimer;
+
+
 // Helper function : Got tired of writing document.getEleme....
 function outputToDomById(id, value){
     document.getElementById(id).innerHTML = value;
 }
 
-// *NOT FUNCTIONAL* Needs to be updated!! 
+
+
 function removeError(id){
     console.log(id);
     var element = document.getElementById(id),
@@ -13,6 +21,8 @@ function removeError(id){
     
     parent.removeChild(element);
 }
+
+
 
 // Creates a new errormessage and appends it to the error container list. 
 function addErrorMessageToList(message){
@@ -149,18 +159,27 @@ function fetchWeatherInfo(location, lat, lon){
     var data = fetchDataFromApi(url,query, function(data){
     console.log(data);
     if (data){        
-        // Sucess!
-            //timeToSunEvent(data.sys.sunset);
-            var rise = stampToTime(data.sys.sunrise),
-                set = stampToTime(data.sys.sunset);
+        // Success!
+            
+            var rise = data.sys.sunrise,
+                set = data.sys.sunset;
+
+        
+            // Clears the currently active sunrise/sunset - timers.
+            clearTimeout(sunriseTimer);
+            clearTimeout(sunsetTimer);
+            
+            //  Starts the countdown for the time left untill sunrise/sunset.
+            timeToSunEvent( 'sunrise', rise);
+            timeToSunEvent( 'sunset', set);
 
             outputToDomById('country', data.sys.country);
             outputToDomById('location', data.name);
             outputToDomById('latitude', data.coord.lat);
             outputToDomById('longitude', data.coord.lon);
             outputToDomById('currentweather', data.weather[0].description);
-            outputToDomById('sunrise', rise);
-            outputToDomById('sunset', set);
+            outputToDomById('sunrise', stampToTime(rise));
+            outputToDomById('sunset', stampToTime(set));
 
         } else {
             // Failure
@@ -310,28 +329,39 @@ function getLocalTime(){
 
 
 
-//// This function need more work to be finished! *WIP*
-//function timeToSunEvent(eventTime){
-//    var today = new Date(),
-//        currentTime = today.getTime() / 1000,
-//        timeLeft;
-//        
-//        function updateCountDown(time){
-//            setTimeout(function(){ timeToSunEvent(time); }, 1000);
-//        }
-//        
-//    
-//        // ...on sunset. 
-//        if (eventTime > currentTime){
-//            timeLeft = eventTime - currentTime;
-//            var element = document.getElementById('toSunset');
-//            
-//            // Convert timestamp to a clock time.
-//            element.innerHTML = stampToTime(timeLeft);
-//            updateCountDown(eventTime);
-//        }
-//
-//}
+// This function need more work to be finished! *WIP*
+function timeToSunEvent(event, eventTime){
+    var today = new Date(),
+        currentTime = today.getTime() / 1000,
+        timeLeft;
+    
+    // Should convert the UTC timestamp from the APi, to a local timestamp.
+    eventTime = new Date(eventTime);
+
+    function updateCountDown(event, time){
+        if (event == "sunset")
+            sunsetTimer = setTimeout(function(){ timeToSunEvent(event, time); }, 1000);
+        else if (event == "sunrise")
+            sunriseTimer = setTimeout(function(){ timeToSunEvent(event, time); }, 1000);
+    }
+
+    if (event == "sunset"){
+        var id = "toSunset";
+    }
+    else if (event == "sunrise"){
+        var id = "toSunrise";
+    }
+    else{ 
+        console.log("no sun-event was defined on functioncall!");
+    }
+    
+    timeLeft = eventTime - currentTime;
+    var element = document.getElementById(id);
+
+    // Convert timestamp to a clock time.
+    element.innerHTML = stampToTime(timeLeft);
+    updateCountDown(event, eventTime);
+}
 
 window.onload = function(){   
     getLocalTime();
