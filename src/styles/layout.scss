@@ -13,6 +13,7 @@ html{
 }
 
 .wrapper{
+    position: relative;
     margin: 0 auto;
 }
 
@@ -39,15 +40,16 @@ body{
 
 header{
     position: relative;
-    padding: 75px 0 15px 0;
+    text-align: center;
+    padding: 0 0 15px 0;
     color: #c69fca;
 }
 
 .header__img{
     
     position: relative;
-    left: 57%;
-    top: 70px;
+    left: 120px;
+    top: 80px;
     width: 120px;
     height: 120px;
 }
