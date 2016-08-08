@@ -1,6 +1,6 @@
 
-/*  Global variables ** These are only here temporary as global variables are known to be bad practice. Perhaps closures
-    couldbe used instead? ** */ 
+/*  Global variables ** These are only here temporary as global variables are known to be bad practice.     
+    Perhaps closures couldbe used instead? ** */ 
 var sunsetTimer, 
     sunriseTimer;
 
@@ -111,6 +111,8 @@ function getConditionsAtUserPosition(){
     if ( hasBrowserSupport() ){
         navigator.geolocation.getCurrentPosition(success, error, options);
     }
+    
+    // Denna rad körs innan fethWeatherInformation är klar.
 }
  
 
@@ -211,7 +213,7 @@ function searchWeather(){
 
 
 
-//Checks so that if a timepoint is a single digit, it will add a zero ifront of it.     
+//Checks so that if a timepoint is a single digit, it will add a zero in5front of it.     
 function fixSingleDigit(i){
     if (i < 10)
         i = "0" + i;
@@ -238,7 +240,10 @@ function getLocalTime(){
      var today = new Date(),
          date = today.getDate(),
          weekday = today.getDay(),
-         month = today.getMonth(),
+         weekdayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+         month = today.getMonth() + 1,
+         monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", 
+                        "September", "October", "November", "December"],
          currentTime,
          suffix; 
 
@@ -249,6 +254,7 @@ function getLocalTime(){
             hours = time.getHours(),
             minutes = time.getMinutes(),
             seconds = time.getSeconds();
+            
 
         // By calling this function the localClock function will autoupdate every 1000ms
         function updateClock(){
@@ -275,66 +281,10 @@ function getLocalTime(){
     else if (date == 3 || date == 23)
         suffix = ":rd";
 
-
-    // Exchanges the value of "today.getDay() to a name string instead of a number"  
-    if (weekday == 1)
-        weekday = "Monday";
-    else if (weekday == 2)
-        weekday = "Tuesday";
-    else if (weekday == 3)
-        weekday = "Wednesday";
-    else if (weekday == 4)
-        weekday = "Thursday";
-    else if (weekday == 5)
-        weekday = "Friday"
-    else if (weekday == 6)
-        weekday = "Saturday";
-    else
-        weekday = "Sunday";
-
-    // Exchanges the value of "today.getMonth() to a name string instead of a number"  
-    switch(month){
-    case 1:
-        month = "January";
-        break;
-    case 2:
-        month = "February";
-        break;
-    case 3:
-        month = "Mars";
-        break;
-    case 4:
-        month = "April";
-        break;        
-    case 5:
-        month = "May";
-        break;
-    case 6:
-        month = "June";
-        break;
-    case 7:
-        month = "July";
-        break;        
-    case 8:
-        month = "August";
-        break;
-    case 9:
-        month = "September";
-        break;
-    case 4:
-        month = "October";
-        break;        
-    case 5:
-        month = "November";
-        break;
-    case 6:
-        month = "December";
-        break;
-    }        
-
-
-    outputToDomById('date', weekday + " - " + date + suffix);
-    outputToDomById('month', month);
+    
+    console.log(weekday);
+    outputToDomById('date', weekdayNames[weekday] + " - " + date + suffix);
+    outputToDomById('month', monthNames[month]);
     localClock();
 }
 

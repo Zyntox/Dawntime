@@ -30,16 +30,86 @@
         
         <!-- Mainboard *START* -->
         <div class="mainboard">
+            <div class="wrapper wrapper--small">
                
+                <!-- hz-box *START*-->
+                <div class="hz-box">
+                    <div class="hz-box__title">
+  
+                        <span class="hz-box__item right">   
+                            <span id="clock"></span>
+                        </span>    
+                       
+                        <span class=" hz-box__item left">
+                            <span id="location"></span>
+                        </span>
+                        
+                        <span class=" hz-box__item left"> 
+                            <span id="date"></span> of <span id="month"></span>
+                        </span>
+                        
+                        <br class="clear">
+                        
+                    </div>    
+                </div>
+                <!--  hz-box *END*-->
                 
-               
+                
+                <!-- Weather-information *START*-->
+                <div class="infobox infobox--weatherinfo">
+                    <div class="infobox__title text--left">
+                        Weather information
+                    </div>
+                    <ul class="infobox--weatherinfo__list">
+                        <li class="infobox--weatherinfo__item"></li>
+                        <li class="infobox--weatherinfo__item"></li>
+                        <li class="infobox--weatherinfo__item"></li>
+                        <li class="infobox--weatherinfo__item"></li>
+                        <li class="infobox--weatherinfo__item"></li>
+                        <li class="infobox--weatherinfo__item"></li>
+                        <li class="infobox--weatherinfo__item"></li>
+                    </ul>
+                    
+                </div> 
+                <!-- Weather-information *END* -->
+                
+                
+                <!-- Sunrise - information *START* -->
+                <div class="infobox infobox--sunrise left">
+                    <div class="infobox__item">
+                        <div class="infobox__title">
+                            Sundown
+                        </div>
+                        <div class="infobox__info">
+                             <span id="toSunset"></span>
+                        </div>
+                    </div>   
+                </div>
+                <!-- Sunrise-information *END* --> 
+                
+                <!-- Sunset-information *START* -->
+                <div class="infobox infobox--sunset left">
+                    <div class="infobox__item">
+                        <div class="infobox__title">
+                            Sunrise
+                        </div>
+
+                        <div class="infobox__info">
+                            <span id="toSunrise"></span>
+                        </div>
+                   </div>
+                </div>
+                <!-- Sunset-information *END* -->
+                
+                <!-- 
+               <br>
                 <ul class="infocontainer animated FadeInLeftBig">
-                    <li class="infocontaineer__item" > <b>Date:</b> <span id="date"></span> of <span id="month"></span></li>
-                    <li class="infocontainer__item"> <b>Location: </b> <span id="location"></span></li>
+
+                    
                     <li class="infocontainer__item"> <b>Country: </b> <span id="country"></span></li>
                     <li class="infocontainer__item"><b>Latitude: </b> <span id="latitude"></span> </li>
                     <li class="infocontainer__item"><b>Longitude: </b> <span id="longitude"></span> </li>
-                    <li class="infocontainer__item"><b>The Local time: </b> <span id="clock"></span> </li>
+                    
                     <li class="infocontainer__item"><b>current weather: </b> <span id="currentweather"></span> </li>
                   
                 </ul>
@@ -47,11 +117,9 @@
                     <li class="infcontainer__item"><b>Info from Sunrise - Sunset API </b></li>
                     <li class="infcontainer__item"><b>sunrise: </b> <span id="sunrise"></span> </li>
                     <li class="infcontainer__item"><b>sunset: </b> <span id="sunset"></span> </li>
-                    <li class="infocontainer__item"><b>time left to sunset:</b> <span id="toSunset"></span></li>
-                    <li class="infocontainer__item"><b>time left to sunrise: </b><span id="toSunrise"></span></li>
-                    
                 </ul>
-                
+                -->
+            </div>    
         </div>
         <!-- Mainboard *END* -->
     

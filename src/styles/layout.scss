@@ -30,12 +30,24 @@ html{
     width: 60%;
 }
 
+.left{
+    float:left;
+}
+
+.right{
+    float:right;
+}
+
+.clear{
+    clear: both;
+}
+
 body{
-    background-image: url('../img/28070423031_83fcab325d_o.jpg');
+    //background-image: url('../img/28070423031_83fcab325d_o.jpg');
+    background-color: $third-color;
     min-height: 100%;
     // Essential for "clean sticky footer"!
     margin: 0 0 100px; /* bottom = footer height */
-    background-color: #ffffff;
 }
 
 header{
@@ -161,6 +173,49 @@ h5{
 .infocontainer__item{
     padding:  3px 0 3px 0;
 }
+
+
+.infobox{
+    margin: 0 0 5px 0;
+    float:left;
+}
+
+.infobox, .hz-box{
+    font-family: $first-font;
+    color: #fff;
+    padding: 15px 2% 15px 2%;
+    background-color: rgba(0, 0 ,0, 0.5);
+} 
+
+.infobox--sunrise, .infobox--sunset{
+    width: 46%;
+}
+
+
+.infobox--weatherinfo{
+    width: 96%;
+    height: 200px;
+}
+
+.infobox__title{
+    font-weight: 100;
+}
+
+.infobox__info{
+    margin: 5px 0 0 0;
+}
+
+
+.hz-box{
+    text-align: left;
+    margin: 0 0 5px 0;
+}
+
+.hz-box__title{
+    font-family: $first-font;
+    font-size: 17px;
+}
+
 
 .factbox{
     color: #ffffff;
