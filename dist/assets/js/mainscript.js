@@ -136,8 +136,6 @@ function fetchDataFromApi(url, query, callback){
     request.send();
 }
 
-
-
 function fetchWeatherInfo(location, lat, lon){
     //Checks what parameters was put in. If a location was put in that case will be handled before coords. 
     var query;
@@ -175,13 +173,13 @@ function fetchWeatherInfo(location, lat, lon){
             timeToSunEvent( 'sunrise', rise);
             timeToSunEvent( 'sunset', set);
 
-            outputToDomById('country', data.sys.country);
+            //outputToDomById('country', data.sys.country);
             outputToDomById('location', data.name);
-            outputToDomById('latitude', data.coord.lat);
-            outputToDomById('longitude', data.coord.lon);
-            outputToDomById('currentweather', data.weather[0].description);
-            outputToDomById('sunrise', stampToTime(rise));
-            outputToDomById('sunset', stampToTime(set));
+            //outputToDomById('latitude', data.coord.lat);
+            //outputToDomById('longitude', data.coord.lon);
+            //outputToDomById('currentweather', data.weather[0].description);
+            //outputToDomById('sunrise', stampToTime(rise));
+            //outputToDomById('sunset', stampToTime(set));
 
         } else {
             // Failure
