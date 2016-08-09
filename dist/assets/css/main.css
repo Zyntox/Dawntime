@@ -51,12 +51,6 @@ button:focus {
   color: #d8d8d8;
 }
 
-/**************************************************************************************************
-    Animation *START*
-***************************************************************************************************/
-/**************************************************************************************************
-    Animation *END*
-***************************************************************************************************/
 html {
   margin: 0 auto;
   position: relative;
@@ -219,12 +213,12 @@ h5 {
   padding: 3px 0 3px 0;
 }
 
-.infobox {
+.infobox, .infobox--sunrise, .infobox--sunset, .infobox--weatherinfo {
   margin: 0 0 5px 0;
   float: left;
 }
 
-.infobox, .hz-box {
+.infobox, .infobox--sunrise, .infobox--sunset, .infobox--weatherinfo, .hz-box {
   font-family: "Raleway", sans-serif;
   color: #fff;
   padding: 15px 2% 15px 2%;
@@ -256,18 +250,6 @@ h5 {
 .hz-box__title {
   font-family: "Raleway", sans-serif;
   font-size: 17px;
-}
-
-.factbox {
-  color: #ffffff;
-  margin: 0 0 15px 0;
-  width: 40%;
-  line-height: 1.5;
-  padding: 10px 20px 10px 20px;
-  font-size: 12px;
-  font-family: "Raleway", sans-serif;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 20px;
 }
 
 footer {

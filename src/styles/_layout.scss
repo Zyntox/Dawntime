@@ -1,10 +1,4 @@
-/**************************************************************************************************
-    Animation *START*
-***************************************************************************************************/
 
-/**************************************************************************************************
-    Animation *END*
-***************************************************************************************************/
 
 html{
     margin: 0 auto;
@@ -12,35 +6,43 @@ html{
     min-height: 100%;
 }
 
+
 .wrapper{
     position: relative;
     margin: 0 auto;
 }
+
 
 .wrapper--large{
     width: 95%;
     //background-color: greenyellow;
 }
 
+
 .wrapper--medium{
     width: 75%;  
 }
+
 
 .wrapper--small{
     width: 60%;
 }
 
+
 .left{
     float:left;
 }
+
 
 .right{
     float:right;
 }
 
+
 .clear{
     clear: both;
 }
+
 
 body{
     background-image: url('../img/28070423031_83fcab325d_o.jpg');
@@ -50,12 +52,14 @@ body{
     margin: 0 0 100px; /* bottom = footer height */
 }
 
+
 header{
     position: relative;
     text-align: center;
     padding: 0 0 15px 0;
     color: #c69fca;
 }
+
 
 .header__img{
     
@@ -66,12 +70,14 @@ header{
     height: 120px;
 }
 
+
 .header__logotype{
     font-family: $first-font;
     color:    #dec3de;
     // color:    #dec3de;
     margin: 10px 0 0 0 ;
 }
+
 
 .header__subline{
     padding: 0;
@@ -88,9 +94,11 @@ h5{
     font-family: $first-font;
 }  
 
+
 .finder{
     text-align: center;    
 }
+
 
 .finder__searchbar{
     position: relative;
@@ -109,6 +117,7 @@ h5{
     
 }
 
+
 .finder__btn{
     display: inline-block;
     padding: 8px 10px 8px 8px;
@@ -119,21 +128,27 @@ h5{
     
 }
 
+
 .finder__btn:hover{
     background-color: $third-color;
 }
+
 
 .finder__btn__icon{
     width: 25px;
     height: 25px;
 }
+
+
 .mainboard{
     text-align: center;
 }
 
+
 .errorcontainer{
       text-align: center;
 }
+
 
 .errorcontainer__list{
     padding: 0;
@@ -144,12 +159,14 @@ h5{
     font-weight: 100;
 }
 
+
 .errorcontainer__item{
     text-align: right;
     padding: 3px 7px 7px 7px;
     margin: 2px 0 0 0;
     background-color: rgba(0, 0,0, 0.5);
 }
+
 
 .errorcontainer__btn{
     position: relative;
@@ -159,6 +176,7 @@ h5{
     height: 20px;
     margin: 0 0 0 5px;
 }
+
 
 .infocontainer{
     font-family: $first-font;
@@ -170,6 +188,7 @@ h5{
     color: #fff;
 }
 
+
 .infocontainer__item{
     padding:  3px 0 3px 0;
 }
@@ -180,6 +199,7 @@ h5{
     float:left;
 }
 
+
 .infobox, .hz-box{
     font-family: $first-font;
     color: #fff;
@@ -187,19 +207,28 @@ h5{
     background-color: rgba(0, 0 ,0, 0.5);
 } 
 
+
 .infobox--sunrise, .infobox--sunset{
+    
+    @extend .infobox;
+    
     width: 46%;
 }
 
 
 .infobox--weatherinfo{
+    
+    @extend .infobox;
+    
     width: 96%;
     height: 200px;
 }
 
+
 .infobox__title{
     font-weight: 100;
 }
+
 
 .infobox__info{
     margin: 5px 0 0 0;
@@ -211,26 +240,10 @@ h5{
     margin: 0 0 5px 0;
 }
 
+
 .hz-box__title{
     font-family: $first-font;
     font-size: 17px;
-}
-
-
-.factbox{
-    color: #ffffff;
-    margin: 0 0 15px 0;
-    width: 40%;
-    line-height: 1.5;
-    padding: 10px 20px 10px 20px; 
-    font-size: 12px;
-    font-family: $first-font;
-    background-color: rgba(0, 0 ,0, 0.5);
-    
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
-    
 }
 
 
@@ -249,6 +262,7 @@ footer{
     padding: 5px 0 5px 0;
 }
 
+
 .byline__text{
     font-size: 12px;
     font-family: $first-font;
@@ -261,22 +275,27 @@ footer{
     General classes  *START* 
 *********************************************************************************************/
 
+
 .text--code{
     color: #d594f4;
     font-family: $second-font;
 }
 
+
 .text--left{
     text-align: left;
 }
+
 
 .text--center{
     text-align: center;
 }
 
+
 .text--right{
     text-align: right;
 }
+
 
 /********************************************************************************************
     General classes  *END* 
